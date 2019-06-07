@@ -104,7 +104,7 @@
 <meta property="og:site_name" content="Joyking7">
 <meta property="og:description" content="AcWing 13. 找出数组中重复的数字题目描述给定一个长度为 n 的整数数组 nums，数组中所有的数字都在 0 ∼ n − 1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。  注意：如果某些数字不在 0 ∼ n − 1 的范围内，或数组中不包含重复数字，则返回 -1；  样例 给定 nums = [2, 3, 5,">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-06-02T08:14:53.394Z">
+<meta property="og:updated_time" content="2019-06-07T13:57:20.405Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="[AcWing] 剑指 offer Week 1">
 <meta name="twitter:description" content="AcWing 13. 找出数组中重复的数字题目描述给定一个长度为 n 的整数数组 nums，数组中所有的数字都在 0 ∼ n − 1 的范围内。数组中某些数字是重复的，但不知道有几个数字重复了，也不知道每个数字重复了几次。请找出数组中任意一个重复的数字。  注意：如果某些数字不在 0 ∼ n − 1 的范围内，或数组中不包含重复数字，则返回 -1；  样例 给定 nums = [2, 3, 5,">
@@ -193,7 +193,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Navigationsleiste an/ausschalten">
+    <button aria-label="Cambiar a barra de navegación">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -221,7 +221,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Startseite</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Inicio</a>
 
   </li>
         
@@ -238,7 +238,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archiv</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archivo</a>
 
   </li>
 
@@ -333,19 +333,31 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Veröffentlicht am</span>
+                <span class="post-meta-item-text">Publicado el</span>
               
 
               
                 
               
 
-              <time title="Erstellt: 2019-06-02 15:22:02 / Geändert am: 16:14:53" itemprop="dateCreated datePublished" datetime="2019-06-02T15:22:02+08:00">2019-06-02</time>
+              <time title="Creado por: 2019-06-02 15:22:02" itemprop="dateCreated datePublished" datetime="2019-06-02T15:22:02+08:00">2019-06-02</time>
             
 
             
               
 
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Editado el</span>
+                
+                <time title="Modificado por: 2019-06-07 21:57:20" itemprop="dateModified" datetime="2019-06-07T21:57:20+08:00">2019-06-07</time>
               
             
           </span>
@@ -391,7 +403,7 @@
 <p>时间复杂度: <em>O(n)</em><br>空间复杂度: <em>O(n)</em></p>
 </blockquote>
 <p>利用 <code>map</code> 或者 <code>unordered_map</code> 建立 hash 映射，在一次 for 循环中对于数组内的值进行映射建立，再判断 hash 内的值是否有超过阈值的情况进行 return。</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">duplicateInArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(nums.empty())</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">auto</span> nums_size = nums.size();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i:nums)</span><br><span class="line">        <span class="keyword">if</span>(i&lt;<span class="number">0</span> || i&gt;nums_size)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums_size; i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(m.find(nums[i]) != m.end())</span><br><span class="line">            m[nums[i]] += <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            m[nums[i]] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> c:m)</span><br><span class="line">        <span class="keyword">if</span>(c.second &gt;= <span class="number">1</span>)</span><br><span class="line">            <span class="keyword">return</span> c.first;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">duplicateInArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> c: nums)</span><br><span class="line">            <span class="keyword">if</span>(c &lt; <span class="number">0</span> || c &gt; nums.size() - <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            m[nums[i]]++;</span><br><span class="line">            <span class="keyword">if</span>(m[nums[i]] &gt; <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <h5 id="sort"><a href="#sort" class="headerlink" title="sort"></a>sort</h5><blockquote>
 <p>时间复杂度: <em>O(nlogn)</em> (取决于排序算法)<br>空间复杂度: <em>O(1)</em></p>
 </blockquote>
@@ -410,6 +422,90 @@
 </li>
 </ul>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">duplicateInArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">auto</span> nums_size = nums.size();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">auto</span> i:nums)</span><br><span class="line">        <span class="keyword">if</span>(i&lt;<span class="number">0</span> || i&gt;nums_size)</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i&lt;nums_size;i++)&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i] != i)&#123;</span><br><span class="line">            <span class="keyword">if</span>(nums[i] == nums[nums[i]])</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">            swap(nums[i], nums[nums[i]]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="AcWing-14-不修改数组找出重复的数字"><a href="#AcWing-14-不修改数组找出重复的数字" class="headerlink" title="AcWing 14.不修改数组找出重复的数字"></a>AcWing 14.不修改数组找出重复的数字</h3><h4 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一个长度为 <strong>n + 1</strong> 的数组nums，数组中所有的数均在 <em>1∼n</em> 的范围内，其中 <em>n≥1</em>。<br>请找出数组中任意一个重复的数，但不能修改输入的数组。</p>
+<p><strong>样例</strong></p>
+<pre><code>给定 nums = [2, 3, 5, 4, 3, 2, 6, 7]。
+返回 2 或 3。
+</code></pre><p><strong>思考</strong></p>
+<blockquote>
+<p>如果只能使用 O(1) 的额外空间，该怎么做呢？</p>
+</blockquote>
+<h4 id="算法分析-1"><a href="#算法分析-1" class="headerlink" title="算法分析"></a>算法分析</h4><p>题目要求不修改数组找出重复的数字，那么对于类似上题的排序或者交换的方法则不可以使用，而映射的方法还可以使用，但是会占用 <em>O(n)</em> 的空间。这时候看题目的描述， <em>n + 1</em> 的数组，数字的范围为 <em>1~n</em>，那么可以知晓，在这个数组中必定存在一个重复的数字，因为组合数组抽屉原理。</p>
+<blockquote>
+<p>抽屉原理：n+1 个苹果放在 n 个抽屉里，那么至少有一个抽屉中会放两个苹果。</p>
+</blockquote>
+<p>这个时候我们可以考虑用<em>分治法</em>的思路，将每个数的取值的区间[1, n]划分成[1, n/2]和[n/2+1, n]两个子区间，然后分别统计两个区间中数的个数。</p>
+<blockquote>
+<p>注意这里的区间是指 <strong>数的取值范围</strong>，而不是 <strong>数组下标</strong>。</p>
+</blockquote>
+<p>划分之后，左右两个区间里一定至少存在一个区间，区间中数的个数大于区间长度。<br>这个可以用反证法来说明：如果两个区间中数的个数都小于等于区间长度，那么整个区间中数的个数就小于等于 n，和有 n + 1 个数矛盾。</p>
+<p>因此我们可以把问题划归到左右两个子区间中的一个，而且由于区间中数的个数大于区间长度，根据抽屉原理，在这个子区间中一定存在某个数出现了两次。</p>
+<p>依次类推，每次我们可以把区间长度缩小一半，直到区间长度为1时，我们就找到了答案。</p>
+<h5 id="分治法-抽屉原理"><a href="#分治法-抽屉原理" class="headerlink" title="分治法+抽屉原理"></a>分治法+抽屉原理</h5><blockquote>
+<p>时间复杂度: <em>O(nlogn)</em><br>空间复杂度: <em>O(1)</em></p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">duplicateInArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">int</span> l = <span class="number">1</span>, r = nums.size() - <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span> (l &lt; r)&#123;</span><br><span class="line">        <span class="comment">//int mid = (int)(l + r)/2;</span></span><br><span class="line">        <span class="keyword">int</span> mid = l + r &gt;&gt; <span class="number">1</span>;   <span class="comment">// 划分的区间：[l, mid], [mid + 1, r]</span></span><br><span class="line">        <span class="keyword">int</span> s = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> x:nums)        <span class="comment">// 统计个数</span></span><br><span class="line">            <span class="keyword">if</span>(x &gt;= l &amp;&amp; x &lt;= mid)</span><br><span class="line">                s++;</span><br><span class="line">        <span class="keyword">if</span>(s &gt; mid - l + <span class="number">1</span>) <span class="comment">// 左区间</span></span><br><span class="line">            r = mid;</span><br><span class="line">        <span class="keyword">else</span>                <span class="comment">// 右区间</span></span><br><span class="line">            l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> r;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="hash-1"><a href="#hash-1" class="headerlink" title="hash"></a>hash</h5><blockquote>
+<p>时间复杂度: <em>O(n)</em><br>空间复杂度: <em>O(n)</em><br><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">duplicateInArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; nums)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(nums.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> c: nums)</span><br><span class="line">            <span class="keyword">if</span>(c &lt; <span class="number">0</span> || c &gt; nums.size() - <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">        <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; m;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; nums.size(); i++)&#123;</span><br><span class="line">            m[nums[i]]++;</span><br><span class="line">            <span class="keyword">if</span>(m[nums[i]] &gt; <span class="number">1</span>)</span><br><span class="line">                <span class="keyword">return</span> nums[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">-1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h3 id="AcWing-15-二维数组中的查找"><a href="#AcWing-15-二维数组中的查找" class="headerlink" title="AcWing 15.二维数组中的查找"></a>AcWing 15.二维数组中的查找</h3><h4 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h4><p>在一个二维数组中，每一行都按照从左到右递增的顺序排序，每一列都按照从上到下递增的顺序排序。<br>请完成一个函数，输入这样的一个二维数组和一个整数，判断数组中是否含有该整数。</p>
+<p><strong>样例</strong></p>
+<pre><code>输入数组：
+[
+    [1,2,8,9]，
+    [2,4,9,12]，
+    [4,7,10,13]，
+    [6,8,11,15]
+]
+
+如果输入查找数值为7，则返回true，
+
+如果输入查找数值为5，则返回false。
+</code></pre><h4 id="算法分析-2"><a href="#算法分析-2" class="headerlink" title="算法分析"></a>算法分析</h4><p>通过题目描述和观察输入的数组，我们不难发现每个<strong>子矩阵</strong>具有一个共有的性质，即</p>
+<blockquote>
+<p>右上角的值要大于等于左边，小于等于下边</p>
+</blockquote>
+<p>因此我们可以考虑从该矩阵的右上角进行扫描，设当前扫描到的数字为 <em>x</em>:</p>
+<ul>
+<li>如果 x 等于 target，则找到，返回 true；</li>
+<li>如果 x 小于 target，则 x 左边的数字一定都比 target 要小，因此可以直接排除该行，而向下扫描；</li>
+<li>如果 x 大于 target，则 x 下边的数字一定都比 target 要大，因此可以直接排除该列，而向左扫描。</li>
+</ul>
+<p>排除整行，则是横坐标 i 加一，排除整列，则是纵坐标 j 减一，如果扫描完矩阵也没有找到，则返回 false；</p>
+<h5 id="扫描法"><a href="#扫描法" class="headerlink" title="扫描法"></a>扫描法</h5><blockquote>
+<p>时间复杂度：<em>O(n + m)</em><br>空间复杂度：<em>O(1)</em> </p>
+</blockquote>
+<p>每一步会排除一行或者一列，矩阵一共有 n 行，m 列，所以最多会进行 n+m 步。所以时间复杂度是 <em>O(n+m)</em>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">searchArray</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&gt; <span class="built_in">array</span>, <span class="keyword">int</span> target)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(<span class="built_in">array</span>.empty() || <span class="built_in">array</span>[<span class="number">0</span>].empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">int</span> m = <span class="number">0</span>, n = <span class="built_in">array</span>[<span class="number">0</span>].size() - <span class="number">1</span>;</span><br><span class="line">        <span class="keyword">while</span>(m &lt; <span class="built_in">array</span>.size() &amp;&amp; n &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">array</span>[m][n] == target)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">            <span class="keyword">if</span>(<span class="built_in">array</span>[m][n] &lt; target)</span><br><span class="line">                m++;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                n--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="AcWing-16-替换空格"><a href="#AcWing-16-替换空格" class="headerlink" title="AcWing 16.替换空格"></a>AcWing 16.替换空格</h3><h4 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h4><p>请实现一个函数，把字符串中的每个空格替换成 <em>“%20”</em>。</p>
+<p>你可以假定输入字符串的长度最大是1000。<br>注意输出字符串的长度可能大于1000。</p>
+<p><strong>样例</strong></p>
+<pre><code>输入：&quot;We are happy.&quot;
+
+输出：&quot;We%20are%20happy.&quot;
+</code></pre><h4 id="算法分析-3"><a href="#算法分析-3" class="headerlink" title="算法分析"></a>算法分析</h4><p>本题可以从两个角度来解决，一个就是从前向后枚举原来的字符串：</p>
+<ul>
+<li>如果遇到空格，则在 string 类型的答案中添加对应需要替换的字符串；</li>
+<li>如果遇到其他字符，则直接将其添加进去</li>
+</ul>
+<p>另外一种方法，我们可以动态的将原来的数组长度扩大，此时我们就可以使用双指针算法，来降低空间的使用：</p>
+<ul>
+<li>首先遍历一遍原数组，求出最终答案的长度length；</li>
+<li>将原数组resize成length大小；</li>
+<li>使用两个指针，指针i指向原字符串的末尾，指针j指向length的位置；</li>
+<li>两个指针分别从后往前遍历，如果str[i] == ‘ ‘，则指针j的位置上依次填充’0’, ‘2’, ‘%’，这样倒着看就是”%20”；如果str[i] != ‘ ‘，则指针j的位置上填充该字符即可。</li>
+</ul>
+<p>由于i之前的字符串，在变换之后，长度一定不小于原字符串，所以遍历过程中一定有i &lt;= j，这样可以保证str[j]不会覆盖还未遍历过的str[i]，从而答案是正确的。</p>
+<h5 id="双指针扫描"><a href="#双指针扫描" class="headerlink" title="双指针扫描"></a>双指针扫描</h5><blockquote>
+<p>时间复杂度：<em>O(n)</em><br>空间复杂度：<em>O(3m)</em>  <em>m</em> 为空格出现次数 </p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">replaceSpaces</span><span class="params">(<span class="built_in">string</span> &amp;str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(str.empty())</span><br><span class="line">            <span class="keyword">return</span> str;</span><br><span class="line">        <span class="keyword">int</span> len = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">auto</span> c: str)</span><br><span class="line">            <span class="keyword">if</span>(c == <span class="string">' '</span>)</span><br><span class="line">                len += <span class="number">3</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                len++;</span><br><span class="line">        <span class="keyword">int</span> i = str.size() - <span class="number">1</span>, j = len - <span class="number">1</span>;</span><br><span class="line">        str.resize(len);</span><br><span class="line">        <span class="keyword">while</span>(i &gt;= <span class="number">0</span>)&#123;</span><br><span class="line">            <span class="keyword">if</span>(str[i] == <span class="string">' '</span>)&#123;</span><br><span class="line">                str[j--] = <span class="string">'0'</span>;</span><br><span class="line">                str[j--] = <span class="string">'2'</span>;</span><br><span class="line">                str[j--] = <span class="string">'%'</span>;</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                str[j--] = str[i];</span><br><span class="line">            &#125;</span><br><span class="line">            i--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h5 id="线性扫描"><a href="#线性扫描" class="headerlink" title="线性扫描"></a>线性扫描</h5><blockquote>
+<p>时间复杂度：<em>O(n)</em><br>空间复杂度：<em>O(n+3m)</em> <em>m</em> 为空格出现次数 </p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">replaceSpaces</span><span class="params">(<span class="built_in">string</span> &amp;str)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x : str)</span><br><span class="line">            <span class="keyword">if</span> (x == <span class="string">' '</span>)</span><br><span class="line">                res += <span class="string">"%20"</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                res += x;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>或者</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">replaceSpaces</span><span class="params">(<span class="built_in">string</span> &amp;str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(str.empty())</span><br><span class="line">            <span class="keyword">return</span> str;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt;= str.size())&#123;</span><br><span class="line">            <span class="keyword">if</span>(str[i] == <span class="string">' '</span>)&#123;</span><br><span class="line">                <span class="built_in">string</span> pre = str.substr(<span class="number">0</span>, i);</span><br><span class="line">                <span class="built_in">string</span> mid = <span class="string">"%20"</span>;</span><br><span class="line">                <span class="built_in">string</span> post = str.substr(i + <span class="number">1</span>, str.size() - <span class="number">1</span>);</span><br><span class="line">                str = pre + mid + post;</span><br><span class="line">                i += <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
       
     </div>
 
@@ -483,10 +579,10 @@
       
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Inhaltsverzeichnis
+            Tabla de contenidos
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Übersicht
+            Inicio
           </li>
         </ul>
       
@@ -507,7 +603,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">Artikel</span>
+                    <span class="site-state-item-name">entradas</span>
                   </a>
                 </div>
               
@@ -524,7 +620,7 @@
                       
                     
                     <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">schlagwörter</span>
+                    <span class="site-state-item-name">tags</span>
                   
                 </div>
               
@@ -561,7 +657,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#AcWing-13-找出数组中重复的数字"><span class="nav-number">1.</span> <span class="nav-text">AcWing 13. 找出数组中重复的数字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法分析"><span class="nav-number">1.2.</span> <span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hash"><span class="nav-number">1.2.1.</span> <span class="nav-text">hash</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sort"><span class="nav-number">1.2.2.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#swap"><span class="nav-number">1.2.3.</span> <span class="nav-text">swap</span></a></li></ol></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#AcWing-13-找出数组中重复的数字"><span class="nav-number">1.</span> <span class="nav-text">AcWing 13. 找出数组中重复的数字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述"><span class="nav-number">1.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法分析"><span class="nav-number">1.2.</span> <span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#hash"><span class="nav-number">1.2.1.</span> <span class="nav-text">hash</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#sort"><span class="nav-number">1.2.2.</span> <span class="nav-text">sort</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#swap"><span class="nav-number">1.2.3.</span> <span class="nav-text">swap</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AcWing-14-不修改数组找出重复的数字"><span class="nav-number">2.</span> <span class="nav-text">AcWing 14.不修改数组找出重复的数字</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述-1"><span class="nav-number">2.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法分析-1"><span class="nav-number">2.2.</span> <span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#分治法-抽屉原理"><span class="nav-number">2.2.1.</span> <span class="nav-text">分治法+抽屉原理</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#hash-1"><span class="nav-number">2.2.2.</span> <span class="nav-text">hash</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AcWing-15-二维数组中的查找"><span class="nav-number">3.</span> <span class="nav-text">AcWing 15.二维数组中的查找</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述-2"><span class="nav-number">3.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法分析-2"><span class="nav-number">3.2.</span> <span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#扫描法"><span class="nav-number">3.2.1.</span> <span class="nav-text">扫描法</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AcWing-16-替换空格"><span class="nav-number">4.</span> <span class="nav-text">AcWing 16.替换空格</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#题目描述-3"><span class="nav-number">4.1.</span> <span class="nav-text">题目描述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#算法分析-3"><span class="nav-number">4.2.</span> <span class="nav-text">算法分析</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#双指针扫描"><span class="nav-number">4.2.1.</span> <span class="nav-text">双指针扫描</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#线性扫描"><span class="nav-number">4.2.2.</span> <span class="nav-text">线性扫描</span></a></li></ol></li></ol></li></ol></div>
             
 
           </div>
@@ -594,7 +690,7 @@
 </div>
 
 
-  <div class="powered-by">Erstellt mit  <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">Creado mediante <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -602,7 +698,7 @@
 
 
 
-  <div class="theme-info">Design – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+  <div class="theme-info">Tema – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
 
 
 
