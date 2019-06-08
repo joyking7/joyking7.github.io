@@ -189,7 +189,7 @@
   </div>
 
   <div class="site-nav-toggle">
-    <button aria-label="Cambiar a barra de navegación">
+    <button aria-label="Toggle navigation bar">
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
       <span class="btn-bar"></span>
@@ -217,7 +217,7 @@
 
     
 
-    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Inicio</a>
+    <a href="/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>Home</a>
 
   </li>
         
@@ -234,7 +234,7 @@
 
     
 
-    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archivo</a>
+    <a href="/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>Archives</a>
 
   </li>
 
@@ -331,14 +331,14 @@
                 <i class="fa fa-calendar-o"></i>
               </span>
               
-                <span class="post-meta-item-text">Publicado el</span>
+                <span class="post-meta-item-text">Posted on</span>
               
 
               
                 
               
 
-              <time title="Creado por: 2019-06-02 15:22:02" itemprop="dateCreated datePublished" datetime="2019-06-02T15:22:02+08:00">2019-06-02</time>
+              <time title="Created: 2019-06-02 15:22:02" itemprop="dateCreated datePublished" datetime="2019-06-02T15:22:02+08:00">2019-06-02</time>
             
 
             
@@ -353,9 +353,9 @@
                   <i class="fa fa-calendar-check-o"></i>
                 </span>
                 
-                  <span class="post-meta-item-text">Editado el</span>
+                  <span class="post-meta-item-text">Edited on</span>
                 
-                <time title="Modificado por: 2019-06-07 21:57:20" itemprop="dateModified" datetime="2019-06-07T21:57:20+08:00">2019-06-07</time>
+                <time title="Modified: 2019-06-08 16:27:34" itemprop="dateModified" datetime="2019-06-08T16:27:34+08:00">2019-06-08</time>
               
             
           </span>
@@ -506,6 +506,110 @@
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">replaceSpaces</span><span class="params">(<span class="built_in">string</span> &amp;str)</span> </span>&#123;</span><br><span class="line">        <span class="built_in">string</span> res;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">auto</span> x : str)</span><br><span class="line">            <span class="keyword">if</span> (x == <span class="string">' '</span>)</span><br><span class="line">                res += <span class="string">"%20"</span>;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                res += x;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 <p>或者</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="built_in">string</span> <span class="title">replaceSpaces</span><span class="params">(<span class="built_in">string</span> &amp;str)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(str.empty())</span><br><span class="line">            <span class="keyword">return</span> str;</span><br><span class="line">        <span class="keyword">int</span> i = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span>(i &lt;= str.size())&#123;</span><br><span class="line">            <span class="keyword">if</span>(str[i] == <span class="string">' '</span>)&#123;</span><br><span class="line">                <span class="built_in">string</span> pre = str.substr(<span class="number">0</span>, i);</span><br><span class="line">                <span class="built_in">string</span> mid = <span class="string">"%20"</span>;</span><br><span class="line">                <span class="built_in">string</span> post = str.substr(i + <span class="number">1</span>, str.size() - <span class="number">1</span>);</span><br><span class="line">                str = pre + mid + post;</span><br><span class="line">                i += <span class="number">2</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> str;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="AcWing-17-从尾到头打印链表"><a href="#AcWing-17-从尾到头打印链表" class="headerlink" title="AcWing 17.从尾到头打印链表"></a>AcWing 17.从尾到头打印链表</h3><h4 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h4><p>输入一个链表的头结点，按照 <strong>从尾到头</strong> 的顺序返回节点的值。<br>返回的结果用数组存储。</p>
+<p><strong>样例</strong></p>
+<pre><code>输入：[2, 3, 5]
+返回：[5, 3, 2]
+</code></pre><h4 id="算法分析-4"><a href="#算法分析-4" class="headerlink" title="算法分析"></a>算法分析</h4><p>因为本题需要返回的是包含结果的数组，因此不可避免的需要用到 <em>O(n)</em> 的空间复杂度，而方法，只需要遍历链表，然后利用 <em>vector</em> 可以返回 <em>rbegin()</em> 和 <em>rend()</em> 的特性。</p>
+<h5 id="遍历链表"><a href="#遍历链表" class="headerlink" title="遍历链表"></a>遍历链表</h5><blockquote>
+<p>时间复杂度：<em>O(n)</em><br>空间复杂度：<em>O(n)</em></p>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Definition for singly-linked list.</span></span><br><span class="line"><span class="comment"> * struct ListNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     ListNode *next;</span></span><br><span class="line"><span class="comment"> *     ListNode(int x) : val(x), next(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; printListReversingly(ListNode* head) &#123;</span><br><span class="line">        <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; res;</span><br><span class="line">        <span class="keyword">while</span> (head) &#123;</span><br><span class="line">            res.push_back(head-&gt;val);</span><br><span class="line">            head = head-&gt;next;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;(res.rbegin(), res.rend());</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="AcWing-18-重建二叉树"><a href="#AcWing-18-重建二叉树" class="headerlink" title="AcWing 18.重建二叉树"></a>AcWing 18.重建二叉树</h3><h4 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h4><p>输入一棵二叉树 <strong>前序遍历</strong> 和 <strong>中序遍历</strong> 的结果，请重建该二叉树。</p>
+<p><strong>注意</strong></p>
+<pre><code>二叉树中每个节点的值都互不相同；
+输入的前序遍历和中序遍历一定合法；
+</code></pre><p><strong>样例</strong></p>
+<pre><code>给定：
+前序遍历是：[3, 9, 20, 15, 7]
+中序遍历是：[9, 3, 15, 20, 7]
+
+返回：[3, 9, 20, null, null, 15, 7, null, null, null, null]
+返回的二叉树如下所示：
+     3
+    / \
+   9  20
+     /  \
+    15   7
+</code></pre><h4 id="算法分析-5"><a href="#算法分析-5" class="headerlink" title="算法分析"></a>算法分析</h4><p>递归建立整棵二叉树：先递归创建左右子树，然后创建根节点，并让指针指向两棵子树。具体步骤如下：</p>
+<ul>
+<li><p>先利用前序遍历找根节点：前序遍历的第一个数，就是根节点的值；</p>
+</li>
+<li><p>在中序遍历中找到根节点的位置 kk，则 kk 左边是左子树的中序遍历，右边是右子树的中序遍历；</p>
+</li>
+<li><p>假设左子树的中序遍历的长度是 ll，则在前序遍历中，根节点后面的 ll 个数，是左子树的前序遍历，剩下的数是右子树的前序遍历；</p>
+</li>
+<li><p>有了左右子树的前序遍历和中序遍历，我们可以先递归创建出左右子树，然后再创建根节点；</p>
+</li>
+</ul>
+<h5 id="递归"><a href="#递归" class="headerlink" title="递归"></a>递归</h5><blockquote>
+<p>时间复杂度：<em>O(n)</em><br>空间复杂度：<em>O(n)</em></p>
+</blockquote>
+<p>我们在初始化时，用哈希表(unordered_map&lt;int,int&gt;)记录每个值在中序遍历中的位置，这样我们在递归到每个节点时，在中序遍历中查找根节点位置的操作，只需要 <em>O(1)</em> 的时间。此时，创建每个节点需要的时间是 <em>O(1)</em>，所以总时间复杂度是 <em>O(n)</em>。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">unordered_map</span>&lt;<span class="keyword">int</span>, <span class="keyword">int</span>&gt; pos;</span><br><span class="line">    <span class="function">TreeNode* <span class="title">buildTree</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; preorder, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; inorder)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n = preorder.size();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)      <span class="comment">// 对于中序遍历建立 hash</span></span><br><span class="line">            pos[inorder[i]] = i;</span><br><span class="line">        <span class="keyword">return</span> dfs(preorder, inorder, <span class="number">0</span>, n - <span class="number">1</span>, <span class="number">0</span>, n - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line">    <span class="function">TreeNode* <span class="title">dfs</span><span class="params">(<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; pre, <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;&amp; in, <span class="keyword">int</span> pl, <span class="keyword">int</span> pr, <span class="keyword">int</span> il, <span class="keyword">int</span> ir)</span></span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(pl &gt; pr)</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">        <span class="keyword">int</span> k = pos[pre[pl]] - il;      <span class="comment">// 根节点位置</span></span><br><span class="line">        TreeNode* root = <span class="keyword">new</span> TreeNode(pre[pl]);</span><br><span class="line">        root-&gt;left = dfs(pre, in, pl + <span class="number">1</span>, pl + k, il, il + k - <span class="number">1</span>);</span><br><span class="line">        root-&gt;right = dfs(pre, in, pl + k + <span class="number">1</span>, pr, il + k + <span class="number">1</span>, ir);</span><br><span class="line">        <span class="keyword">return</span> root;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="AcWing-19-二叉树的下一个节点"><a href="#AcWing-19-二叉树的下一个节点" class="headerlink" title="AcWing 19.二叉树的下一个节点"></a>AcWing 19.二叉树的下一个节点</h3><h4 id="题目描述-6"><a href="#题目描述-6" class="headerlink" title="题目描述"></a>题目描述</h4><p>给定一棵二叉树的其中一个节点，请找出中序遍历序列的下一个节点。</p>
+<p><strong>注意</strong></p>
+<pre><code>如果给定的节点是中序遍历序列的最后一个，则返回空节点;
+二叉树一定不为空，且给定的节点一定不是空节点；
+</code></pre><p><strong>样例</strong></p>
+<pre><code>假定二叉树是：[2, 1, 3, null, null, null, null]， 给出的是值等于2的节点。
+
+则应返回值等于3的节点。
+
+解释：该二叉树的结构如下，2的后继节点是3。
+         2
+        / \
+       1   3
+</code></pre><h4 id="算法分析-6"><a href="#算法分析-6" class="headerlink" title="算法分析"></a>算法分析</h4><p>本题目标是求给定节点的后继，而给定节点有两种情况：</p>
+<ul>
+<li><p>如果当前节点有右儿子，则右子树中最左侧的节点就是当前节点的后继。</p>
+</li>
+<li><p>如果当前节点没有右儿子，则需要沿着father域一直向上找，找到第一个是其father左儿子的节点，该节点的father就是当前节点的后继。</p>
+</li>
+</ul>
+<h5 id="寻找"><a href="#寻找" class="headerlink" title="寻找"></a>寻找</h5><blockquote>
+<p>时间复杂度：<em>O(h)</em><br>空间复杂度：<em>O(1)</em></p>
+</blockquote>
+<p>不论往上找还是往下找，总共遍历的节点数都不大于树的高度。所以时间复杂度是 O(h)O(h)，其中 hh 是树的高度。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * struct TreeNode &#123;</span></span><br><span class="line"><span class="comment"> *     int val;</span></span><br><span class="line"><span class="comment"> *     TreeNode *left;</span></span><br><span class="line"><span class="comment"> *     TreeNode *right;</span></span><br><span class="line"><span class="comment"> *     TreeNode *father;</span></span><br><span class="line"><span class="comment"> *     TreeNode(int x) : val(x), left(NULL), right(NULL), father(NULL) &#123;&#125;</span></span><br><span class="line"><span class="comment"> * &#125;;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function">TreeNode* <span class="title">inorderSuccessor</span><span class="params">(TreeNode* p)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (p-&gt;right) &#123;</span><br><span class="line">            p = p-&gt;right;</span><br><span class="line">            <span class="keyword">while</span> (p-&gt;left) p = p-&gt;left;</span><br><span class="line">            <span class="keyword">return</span> p;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">while</span> (p-&gt;father &amp;&amp; p == p-&gt;father-&gt;right) p = p-&gt;father;</span><br><span class="line">        <span class="keyword">return</span> p-&gt;father;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<h3 id="AcWing-20-用两个栈实现队列"><a href="#AcWing-20-用两个栈实现队列" class="headerlink" title="AcWing 20.用两个栈实现队列"></a>AcWing 20.用两个栈实现队列</h3><h4 id="题目描述-7"><a href="#题目描述-7" class="headerlink" title="题目描述"></a>题目描述</h4><p>请用栈实现一个队列，支持如下四种操作：</p>
+<ul>
+<li>push(x) – 将元素x插到队尾；</li>
+<li>pop() – 将队首的元素弹出，并返回该元素；</li>
+<li>peek() – 返回队首元素；</li>
+<li>empty() – 返回队列是否为空；</li>
+</ul>
+<p><strong>注意</strong></p>
+<pre><code>你只能使用栈的标准操作：push to top，peek/pop from top, size 和 is empty；
+
+如果你选择的编程语言没有栈的标准库，你可以使用list或者deque等模拟栈的操作；
+
+输入数据保证合法，例如，在队列为空时，不会进行pop或者peek等操作；
+</code></pre><p><strong>样例</strong></p>
+<p>MyQueue queue = new MyQueue();</p>
+<pre><code>queue.push(1);
+queue.push(2);
+queue.peek();  // returns 1
+queue.pop();   // returns 1
+queue.empty(); // returns false
+</code></pre><h4 id="算法分析-7"><a href="#算法分析-7" class="headerlink" title="算法分析"></a>算法分析</h4><p>这是一道基础题，只要把功能实现对就可以，不需要考虑运行效率。</p>
+<p>我们用两个栈来做，一个主栈，用来存储数据；一个辅助栈，用来当缓存。</p>
+<ul>
+<li>push(x)，我们直接将x插入主栈中即可。</li>
+<li>pop()，此时我们需要弹出最先进入栈的元素，也就是栈底元素。我们可以先将所有元素从主栈中弹出，压入辅助栈中。则辅助栈的栈顶元素就是我们要弹出的元素，将其弹出即可。然后再将辅助栈中的元素全部弹出，压入主栈中。</li>
+<li>peek()，可以用和pop()操作类似的方式，得到最先压入栈的元素。</li>
+<li>empty()，直接判断主栈是否为空即可。</li>
+</ul>
+<h5 id="栈-队列"><a href="#栈-队列" class="headerlink" title="栈/队列"></a>栈/队列</h5><blockquote>
+<p>时间复杂度：</p>
+<ul>
+<li>push()：<em>O(1)</em>；</li>
+<li>pop(): 每次需要将主栈元素全部弹出，再压入，所以需要 <em>O(n)</em> 的时间；</li>
+<li>peek()：类似于 <em>pop()</em>，需要 <em>O(n)</em> 的时间；</li>
+<li>empty()：<em>O(1)</em>；</li>
+</ul>
+</blockquote>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyQueue</span> &#123;</span></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; s1, s2;</span><br><span class="line">    <span class="comment">/** Initialize your data structure here. */</span></span><br><span class="line">    MyQueue() &#123;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Push element x to the back of queue. */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> x)</span> </span>&#123;</span><br><span class="line">        s1.push(x);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Removes the element from in front of queue and returns that element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">pushStackToOtherStack</span><span class="params">(<span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; &amp;a, <span class="built_in">stack</span>&lt;<span class="keyword">int</span>&gt; &amp;b)</span></span>&#123;</span><br><span class="line">        <span class="keyword">while</span>(a.size())&#123;</span><br><span class="line">            b.push(a.top());</span><br><span class="line">            a.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">pop</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 将 s1 中元素压入 s2</span></span><br><span class="line">        pushStackToOtherStack(s1, s2);</span><br><span class="line">        <span class="keyword">int</span> result = s2.top();</span><br><span class="line">        <span class="comment">// s2 top 元素 pop， 其余压回s1</span></span><br><span class="line">        s2.pop();</span><br><span class="line">        pushStackToOtherStack(s2, s1);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Get the front element. */</span></span><br><span class="line">    <span class="function"><span class="keyword">int</span> <span class="title">peek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="comment">// 将 s1 中元素压入 s2</span></span><br><span class="line">        pushStackToOtherStack(s1, s2);</span><br><span class="line">        <span class="keyword">int</span> result = s2.top();</span><br><span class="line">        <span class="comment">// 压回s1</span></span><br><span class="line">        pushStackToOtherStack(s2, s1);</span><br><span class="line">        <span class="keyword">return</span> result;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">/** Returns whether the queue is empty. */</span></span><br><span class="line">    <span class="function"><span class="keyword">bool</span> <span class="title">empty</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span>(s1.empty())</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Your MyQueue object will be instantiated and called as such:</span></span><br><span class="line"><span class="comment"> * MyQueue obj = MyQueue();</span></span><br><span class="line"><span class="comment"> * obj.push(x);</span></span><br><span class="line"><span class="comment"> * int param_2 = obj.pop();</span></span><br><span class="line"><span class="comment"> * int param_3 = obj.peek();</span></span><br><span class="line"><span class="comment"> * bool param_4 = obj.empty();</span></span><br><span class="line"><span class="comment"> */</span></span><br></pre></td></tr></table></figure>
           
         
       
@@ -589,7 +693,7 @@
                   <a href="/archives/">
                 
                     <span class="site-state-item-count">1</span>
-                    <span class="site-state-item-name">entradas</span>
+                    <span class="site-state-item-name">posts</span>
                   </a>
                 </div>
               
@@ -659,7 +763,7 @@
 </div>
 
 
-  <div class="powered-by">Creado mediante <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> v3.8.0</div>
 
 
 
@@ -667,7 +771,7 @@
 
 
 
-  <div class="theme-info">Tema – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
+  <div class="theme-info">Theme – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Muse</a> v7.1.1</div>
 
 
 
